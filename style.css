@@ -767,7 +767,7 @@ body {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--header-bg);
+    background-color: #fff;
     position: absolute;
     top: 60px;
     left: 0;
@@ -778,7 +778,9 @@ body {
   .nav-links.active {
     display: flex;
   }
-
+.hero-description{
+  width: 100% !important;
+}
   .nav-links li {
     margin: 10px 0;
     text-align: center;

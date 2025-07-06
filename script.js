@@ -240,119 +240,129 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Lọc và Tải thêm Dự án (Portfolio) ---
-const filterButtons = document.querySelectorAll('.filter-button');
-const projectsContainer = document.querySelector('.projects-grid');
-const loadMoreButton = document.getElementById('loadMoreProjects');
-const projectsPerPage = 6;
-let currentDisplayedProjects = 0;
-let filteredProjectsData = [];
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const projectsContainer = document.querySelector('.projects-grid');
+    const loadMoreButton = document.getElementById('loadMoreProjects');
+    const projectsPerPage = 6;
+    let currentDisplayedProjects = 0;
+    let filteredProjectsData = [];
 
-const allProjectsData = [
-     {
+    const allProjectsData = [
+        {
             id: 1,
             title: `Website Royalhelmet`,
-            description: `Phát triển website quảng bá thương hiệu và bán hàng với đầy đủ chức năng mua hàng quản lý đơn hàng.`,
+            description: `Phát triển website bán hàng – đầy đủ chức năng mua hàng và quản lý đơn hàng.`,
             image: `image/demo/royal.png`,
             link: 'https://royalhelmet.com.vn/',
-            tags: 'web-design branding e-commerce'
+            tags: 'e-commerce'
         },
-     {
+        {
             id: 2,
             title: `Website máy móc`,
-            description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
+            description: `Website bán hàng – hỗ trợ thanh toán và quản lý đơn hàng.`,
             image: `image/demo/maymoc.png`,
             link: 'https://maymochoanglong.vn/',
-            tags: 'web-design e-commerce'
+            tags: 'e-commerce'
         },
         {
             id: 3,
-            title: `Website spa`,
-            description: `Phát triển website quảng bá thương hiệu đầy đủ chức năng đặt lịch và tìm kiếm dịch vụ.`,
-            image: `image/demo/spa.png`,
-            link: 'https://spa2.layoutwebdemo.com/',
-            tags: 'web-design branding'
+            title: `Website thực phẩm`,
+            description: `Website bán hàng – đầy đủ chức năng mua hàng và thanh toán.`,
+            image: `image/demo/thucpham.png`,
+            link: 'https://food16.layoutwebdemo.com/',
+            tags: 'e-commerce'
         },
         {
             id: 4,
-            title: `Website thực phẩm`,
-            description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
-            image: `image/demo/thucpham.png`,
-            link: 'https://food16.layoutwebdemo.com/',
-            tags: 'web-design e-commerce'
+            title: `Website gỗ nhựa`,
+            description: `Website bán hàng – tối ưu trải nghiệm mua sắm và thanh toán.`,
+            image: `image/demo/gonhua.png`,
+            link: 'https://gonhua.layoutwebdemo.com/',
+            tags: 'e-commerce'
         },
         {
             id: 5,
-            title: `Website gỗ nhựa`,
-            description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
-            image: `image/demo/gonhua.png`,
-            link: 'https://gonhua.layoutwebdemo.com/',
-            tags: 'web-design branding e-commerce'
+            title: `Website bánh mì`,
+            description: `Website bán hàng đơn giản – hỗ trợ mua hàng và xử lý đơn hàng.`,
+            image: `image/demo/banhmi.png`,
+            link: 'https://food6.layoutwebdemo.com/',
+            tags: 'e-commerce'
         },
         {
             id: 6,
-            title: `Website bánh mì`,
-            description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
-            image: `image/demo/banhmi.png`,
-            link: 'https://food6.layoutwebdemo.com/',
-            tags: 'web-design e-commerce'
+            title: `Website cơ điện`,
+            description: `Website bán hàng kết hợp giới thiệu doanh nghiệp – hỗ trợ đặt hàng.`,
+            image: `image/demo/codien.png`,
+            link: 'https://satavina.vn/',
+            tags: 'e-commerce branding'
         },
         {
             id: 7,
-            title: `Website cơ điện`,
-            description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
-            image: `image/demo/codien.png`,
-            link: 'https://satavina.vn/',
-            tags: 'web-design branding e-commerce'
+            title: `Website spa`,
+            description: `Website giới thiệu spa – hỗ trợ đặt lịch và tìm kiếm dịch vụ.`,
+            image: `image/demo/spa.png`,
+            link: 'https://spa2.layoutwebdemo.com/',
+            tags: 'branding'
         },
         {
             id: 8,
             title: `Website cơ điện v2`,
-            description: `Phát triển website quảng bá thương hiệu `,
+            description: `Website giới thiệu doanh nghiệp – tập trung vào thương hiệu.`,
             image: `image/demo/codien-v2.png`,
             link: 'https://v2.satavina.vn/',
-            tags: 'web-design branding'
+            tags: 'branding'
         },
         {
             id: 9,
             title: `Website cách nhiệt`,
-            description: `Phát triển website quảng bá thương hiệu.`,
+            description: `Website quảng bá thương hiệu sản phẩm cách nhiệt.`,
             image: `image/demo/cachnhiet.png`,
             link: 'https://www.vietnam-insulation.com/',
-            tags: 'web-design branding'
+            tags: 'branding'
         },
-];
+        {
+            id: 10,
+            title: `Website du lịch`,
+            description: `Website giới thiệu dịch vụ và công ty du lịch hỗ trợ book dịch vụ.`,
+            image: `image/demo/dulich.png`,
+            link: 'https://dulich8.layoutwebdemo.com/',
+            tags: 'branding'
+        }
 
-// Hàm render các dự án
-const renderProjects = (projectsToRender, isInitialLoad = false) => {
-    if (!projectsContainer) return;
+    ];
 
-    if (!isInitialLoad && projectsContainer.children.length > 0) {
-        gsap.to(Array.from(projectsContainer.children), {
-            opacity: 0,
-            y: 20,
-            duration: 0.3,
-            stagger: 0.05,
-            onComplete: () => {
-                projectsContainer.innerHTML = '';
-                currentDisplayedProjects = 0;
-                appendProjects(projectsToRender);
-            }
-        });
-    } else {
-        projectsContainer.innerHTML = '';
-        currentDisplayedProjects = 0;
-        appendProjects(projectsToRender);
-    }
-};
 
-// Hàm thêm và animate các dự án
-const appendProjects = (projects) => {
-    if (!projectsContainer) return;
+    // Hàm render các dự án
+    const renderProjects = (projectsToRender, isInitialLoad = false) => {
+        if (!projectsContainer) return;
 
-    const previousCount = projectsContainer.children.length;
+        if (!isInitialLoad && projectsContainer.children.length > 0) {
+            gsap.to(Array.from(projectsContainer.children), {
+                opacity: 0,
+                y: 20,
+                duration: 0.3,
+                stagger: 0.05,
+                onComplete: () => {
+                    projectsContainer.innerHTML = '';
+                    currentDisplayedProjects = 0;
+                    appendProjects(projectsToRender);
+                }
+            });
+        } else {
+            projectsContainer.innerHTML = '';
+            currentDisplayedProjects = 0;
+            appendProjects(projectsToRender);
+        }
+    };
 
-    projects.forEach(project => {
-        const projectHtml = `
+    // Hàm thêm và animate các dự án
+    const appendProjects = (projects) => {
+        if (!projectsContainer) return;
+
+        const previousCount = projectsContainer.children.length;
+
+        projects.forEach(project => {
+            const projectHtml = `
             <div class="project-item" data-tags="${project.tags}">
                 <img src="${project.image}" alt="${project.title}">
                 <div class="project-info">
@@ -364,91 +374,91 @@ const appendProjects = (projects) => {
                 </div>
             </div>
         `;
-        projectsContainer.insertAdjacentHTML('beforeend', projectHtml);
-    });
+            projectsContainer.insertAdjacentHTML('beforeend', projectHtml);
+        });
 
-    const newlyAddedItems = Array.from(projectsContainer.children).slice(previousCount);
+        const newlyAddedItems = Array.from(projectsContainer.children).slice(previousCount);
 
-    if (newlyAddedItems.length > 0) {
-        gsap.fromTo(newlyAddedItems,
-            { opacity: 0, y: 50, scale: 0.9 },
-            {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "back.out(1.7)",
-                scrollTrigger: {
-                    trigger: newlyAddedItems[0] || projectsContainer,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
+        if (newlyAddedItems.length > 0) {
+            gsap.fromTo(newlyAddedItems,
+                { opacity: 0, y: 50, scale: 0.9 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: newlyAddedItems[0] || projectsContainer,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
                 }
-            }
-        );
-    }
+            );
+        }
 
-    currentDisplayedProjects += projects.length;
-    updateLoadMoreButton();
-};
+        currentDisplayedProjects += projects.length;
+        updateLoadMoreButton();
+    };
 
-// Cập nhật nút Load More
-const updateLoadMoreButton = () => {
-    if (!loadMoreButton) return;
+    // Cập nhật nút Load More
+    const updateLoadMoreButton = () => {
+        if (!loadMoreButton) return;
 
-    if (currentDisplayedProjects < filteredProjectsData.length) {
-        loadMoreButton.style.display = 'inline-flex';
-        gsap.fromTo(loadMoreButton,
-            { opacity: 0, scale: 0.8 },
-            { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
-        );
-        loadMoreButton.classList.remove('loading');
-    } else {
-        gsap.to(loadMoreButton, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.4,
-            onComplete: () => loadMoreButton.style.display = 'none'
+        if (currentDisplayedProjects < filteredProjectsData.length) {
+            loadMoreButton.style.display = 'inline-flex';
+            gsap.fromTo(loadMoreButton,
+                { opacity: 0, scale: 0.8 },
+                { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
+            );
+            loadMoreButton.classList.remove('loading');
+        } else {
+            gsap.to(loadMoreButton, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.4,
+                onComplete: () => loadMoreButton.style.display = 'none'
+            });
+        }
+    };
+
+    // Load thêm dự án
+    const loadMoreProjects = () => {
+        if (!loadMoreButton || loadMoreButton.classList.contains('loading')) return;
+
+        loadMoreButton.classList.add('loading');
+
+        setTimeout(() => {
+            const nextBatch = filteredProjectsData.slice(currentDisplayedProjects, currentDisplayedProjects + projectsPerPage);
+            appendProjects(nextBatch);
+            loadMoreButton.classList.remove('loading');
+        }, 800);
+    };
+
+    // Xử lý filter dự án
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+            filteredProjectsData = allProjectsData.filter(project => {
+                if (filter === 'all') return true;
+                return project.tags.split(' ').includes(filter);
+            });
+
+            renderProjects(filteredProjectsData.slice(0, projectsPerPage), false);
         });
-    }
-};
-
-// Load thêm dự án
-const loadMoreProjects = () => {
-    if (!loadMoreButton || loadMoreButton.classList.contains('loading')) return;
-
-    loadMoreButton.classList.add('loading');
-
-    setTimeout(() => {
-        const nextBatch = filteredProjectsData.slice(currentDisplayedProjects, currentDisplayedProjects + projectsPerPage);
-        appendProjects(nextBatch);
-        loadMoreButton.classList.remove('loading');
-    }, 800);
-};
-
-// Xử lý filter dự án
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.getAttribute('data-filter');
-        filteredProjectsData = allProjectsData.filter(project => {
-            if (filter === 'all') return true;
-            return project.tags.split(' ').includes(filter);
-        });
-
-        renderProjects(filteredProjectsData.slice(0, projectsPerPage), false);
     });
-});
 
-// Sự kiện Load More
-if (loadMoreButton) {
-    loadMoreButton.addEventListener('click', loadMoreProjects);
-}
+    // Sự kiện Load More
+    if (loadMoreButton) {
+        loadMoreButton.addEventListener('click', loadMoreProjects);
+    }
 
-// Khởi tạo ban đầu
-filteredProjectsData = [...allProjectsData];
-renderProjects(filteredProjectsData.slice(0, projectsPerPage), true);
+    // Khởi tạo ban đầu
+    filteredProjectsData = [...allProjectsData];
+    renderProjects(filteredProjectsData.slice(0, projectsPerPage), true);
 
 });

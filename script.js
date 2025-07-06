@@ -323,12 +323,51 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 10,
             title: `Website du lịch`,
-            description: `Website giới thiệu dịch vụ và công ty du lịch hỗ trợ book dịch vụ.`,
+            description: `Website giới thiệu dịch vụ công ty du lịch hỗ trợ book dịch vụ.`,
             image: `image/demo/dulich.png`,
             link: 'https://dulich8.layoutwebdemo.com/',
             tags: 'branding'
-        }
-
+        },
+{
+            id: 11,
+            title: `Website kiến trúc`,
+            description: `Website giới thiệu dịch vụ công ty kiến trúc.`,
+            image: `image/demo/kientruc.png`,
+            link: 'https://kientruc6.layoutwebdemo.com/',
+            tags: 'branding'
+        },
+        {
+            id: 12,
+            title: `Website trường học`,
+            description: `Website giới thiệu dịch vụ trường học và đội ngũ giáo viên.`,
+            image: `image/demo/truonghoc.png`,
+            link: 'https://school1.layoutwebdemo.com/',
+            tags: 'branding'
+        },
+        {
+            id: 13,
+            title: `Website B2B nón bảo hiểm`,
+            description: `Website giới thiệu dịch vụ công ty và bán hàng.`,
+            image: `image/demo/b2b.png`,
+            link: 'https://mubaohiemasia.com/',
+            tags: 'e-commerce branding '
+        },
+        {
+            id: 14,
+            title: `Website AsiaHelmet`,
+            description: `Phát triển website bán hàng – đầy đủ chức năng mua hàng và quản lý đơn hàng.`,
+            image: `image/demo/asia.png`,
+            link: 'https://asiahelmet.com/',
+            tags: 'e-commerce branding'
+        },
+        {
+            id: 15,
+            title: `Website tin tức`,
+            description: `Website đăng bài viết về làm đẹp`,
+            image: `image/demo/tintuc.png`,
+            link: 'https://tintuc2.layoutwebdemo.com/',
+            tags: 'blog'
+        },
     ];
 
 

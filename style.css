@@ -513,7 +513,7 @@ body {
   object-fit: cover;
   object-position: top;
   display: block;
-  transition: object-position 4s ease-in-out;
+  transition: object-position 30s ease-in-out;
 }
 
 .project-item:hover img {

@@ -250,6 +250,14 @@ let filteredProjectsData = [];
 const allProjectsData = [
      {
             id: 1,
+            title: `Website Royalhelmet`,
+            description: `Phát triển website quảng bá thương hiệu và bán hàng với đầy đủ chức năng mua hàng quản lý đơn hàng.`,
+            image: `image/demo/royal.png`,
+            link: 'https://royalhelmet.com.vn/',
+            tags: 'web-design branding e-commerce'
+        },
+     {
+            id: 2,
             title: `Website máy móc`,
             description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
             image: `image/demo/maymoc.png`,
@@ -257,7 +265,7 @@ const allProjectsData = [
             tags: 'web-design e-commerce'
         },
         {
-            id: 2,
+            id: 3,
             title: `Website spa`,
             description: `Phát triển website quảng bá thương hiệu đầy đủ chức năng đặt lịch và tìm kiếm dịch vụ.`,
             image: `image/demo/spa.png`,
@@ -265,7 +273,7 @@ const allProjectsData = [
             tags: 'web-design branding'
         },
         {
-            id: 3,
+            id: 4,
             title: `Website thực phẩm`,
             description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
             image: `image/demo/thucpham.png`,
@@ -273,7 +281,7 @@ const allProjectsData = [
             tags: 'web-design e-commerce'
         },
         {
-            id: 4,
+            id: 5,
             title: `Website gỗ nhựa`,
             description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
             image: `image/demo/gonhua.png`,
@@ -281,7 +289,7 @@ const allProjectsData = [
             tags: 'web-design branding e-commerce'
         },
         {
-            id: 5,
+            id: 6,
             title: `Website bánh mì`,
             description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
             image: `image/demo/banhmi.png`,
@@ -289,7 +297,7 @@ const allProjectsData = [
             tags: 'web-design e-commerce'
         },
         {
-            id: 6,
+            id: 7,
             title: `Website cơ điện`,
             description: `Phát triển website bán hàng đầy đủ chức năng mua hàng thanh toán và quản lý đơn hàng`,
             image: `image/demo/codien.png`,
@@ -297,7 +305,7 @@ const allProjectsData = [
             tags: 'web-design branding e-commerce'
         },
         {
-            id: 7,
+            id: 8,
             title: `Website cơ điện v2`,
             description: `Phát triển website quảng bá thương hiệu `,
             image: `image/demo/codien-v2.png`,
@@ -305,7 +313,7 @@ const allProjectsData = [
             tags: 'web-design branding'
         },
         {
-            id: 8,
+            id: 9,
             title: `Website cách nhiệt`,
             description: `Phát triển website quảng bá thương hiệu.`,
             image: `image/demo/cachnhiet.png`,

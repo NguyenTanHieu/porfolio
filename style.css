@@ -1,15 +1,19 @@
 :root {
-  --primary-color: #4c4b4a;
-  --secondary-color: #888;
-  --text-color: #333;
-  --secondary-text-color: #666;
-  --background-color: #f8f8f8;
-  --light-background: #fff;
-  --card-background: #fff;
-  --border-color: #eee;
-  --shadow-light: rgba(0, 0, 0, 0.1);
+  --primary-color: #002957; /* A modern blue */
+  --secondary-color: #6C757D; /* Muted grey */
+  --text-color: #343A40; /* Darker text for contrast */
+  --secondary-text-color: #6C757D;
+  --background-color: #F4F7FA; /* Light background for professionalism */
+  --light-background: #FFFFFF;
+  --card-background: #FFFFFF;
+  --border-color: #E9ECEF; /* Soft border */
+  --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow */
   --transition-speed: 0.3s;
-  --accent-color: #000;
+  --accent-color: #285E8E; /* A darker shade of primary for accents */
+  --gradient-start: #002957; /* Gradient start color */
+  --gradient-end: #016a78; /* Gradient end color */
+  --project-hover-scale: 1.03; /* Slightly increase size on hover */
+  --project-hover-shadow: rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 * {
@@ -29,13 +33,14 @@ body {
   background-color: var(--background-color);
   transition: background-color var(--transition-speed) ease,
     color var(--transition-speed) ease;
+  cursor: none; /* Hide default cursor */
 }
 /* Back to Top Button */
 .back-to-top-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -51,13 +56,13 @@ body {
   transform: scale(0.8);
   transition: opacity var(--transition-speed) ease,
     transform var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
+    background var(--transition-speed) ease; /* Transition background */
   z-index: 900;
 }
 
 .back-to-top-btn:hover {
-  background-color: var(--accent-color);
-  color: fff;
+  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  color: #fff;
   transform: scale(1.1);
 }
 .bouncing-dots {
@@ -121,7 +126,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); /* Gradient line */
   border-radius: 2px;
 }
 
@@ -179,7 +184,7 @@ body {
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); /* Gradient line */
   bottom: -5px;
   left: 0;
   transition: width var(--transition-speed) ease;
@@ -267,7 +272,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
   color: #fff;
   padding: 15px 30px;
   border-radius: 50px;
@@ -275,7 +280,7 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
   transition: transform var(--transition-speed) ease,
-    background-color var(--transition-speed) ease,
+    background var(--transition-speed) ease, /* Transition background */
     box-shadow var(--transition-speed) ease;
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
   border: none;
@@ -286,7 +291,7 @@ body {
 
 .cta-button:hover {
   transform: translateY(-5px);
-  background-color: #0056b3;
+  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
   box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
 }
 .text-center {
@@ -351,47 +356,6 @@ body {
 .skill-item {
   background-color: var(--card-background);
   padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 5px 15px var(--shadow-light);
-  transition: transform var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px var(--shadow-light);
-}
-
-.skill-item i {
-  font-size: 3rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
-.skill-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-.skill-item p {
-  color: var(--secondary-color);
-}
-/* Skills Section */
-.skills-section {
-  background-color: var(--light-background);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.skill-item {
-  background-color: var(--card-background);
-  padding: 30px;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 5px 15px var(--shadow-light);
@@ -404,7 +368,7 @@ body {
 
 .skill-item:hover {
   transform: translateY(-15px) scale(1.04);
-  box-shadow: 0 18px 40px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 18px 40px rgba(74, 144, 226, 0.25); /* Using primary color for hover shadow */
   border-color: var(--primary-color);
 }
 
@@ -415,7 +379,7 @@ body {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .skill-item:hover i {
-  color: #0056b3;
+  color: var(--accent-color);
   transform: rotateY(360deg);
 }
 .skill-item h3 {
@@ -431,7 +395,7 @@ body {
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Explicitly 3 columns for large screens */
   gap: 30px;
   min-height: 400px;
 }
@@ -446,6 +410,7 @@ body {
   cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
+  position: relative; /* Needed for the hover overlay */
 }
 
 .project-item.visible {
@@ -454,15 +419,21 @@ body {
 }
 
 .project-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px var(--shadow-light);
+  transform: translateY(-10px) scale(var(--project-hover-scale)); /* Move up and slightly scale */
+  box-shadow: 0 15px 30px var(--project-hover-shadow); /* Darker shadow */
 }
 
 .project-item img {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: top;
   display: block;
+  transition: object-position 30s ease-in-out;
+}
+
+.project-item:hover img {
+  object-position: bottom;
 }
 
 .project-info {
@@ -488,36 +459,15 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: color var(--transition-speed) ease;
 }
 
 .project-link i {
   font-size: 1.1rem;
 }
 
-/* Projects Section */
-.project-item {
-  background-color: var(--card-background);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px var(--shadow-light);
-  transition: transform var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.project-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  transition: object-position 30s ease-in-out;
-}
-
-.project-item:hover img {
-  object-position: bottom;
+.project-link:hover {
+    color: var(--accent-color);
 }
 
 /* Project Filtering */
@@ -539,29 +489,40 @@ body {
 }
 
 .filter-button:hover {
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient on hover */
   color: #fff;
-  border-color: var(--primary-color);
+  border-color: transparent;
 }
 
 .filter-button.active {
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient for active */
   color: #fff;
-  border-color: var(--primary-color);
-  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+  border-color: transparent;
+  box-shadow: 0 3px 8px rgba(74, 144, 226, 0.3); /* Using primary color for active shadow */
 }
 
 /* Load More Button Styles */
 #loadMoreProjects {
   margin-top: 40px;
   min-width: 220px;
-  display: flex;
+  display: inline-flex; /* Changed to inline-flex to center better */
   align-items: center;
   justify-content: center;
   border-radius: 99px;
   padding: 20px;
-  background: #000;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
   color: #fff;
+  border: none; /* Ensure no border */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-speed) ease;
+}
+#loadMoreProjects:hover {
+  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 #loadMoreProjects .button-text {
@@ -570,6 +531,7 @@ body {
 
 #loadMoreProjects .button-icon {
   transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: 8px; /* Add some space */
 }
 
 #loadMoreProjects.loading .button-text,
@@ -634,26 +596,26 @@ body {
 
 .contact-card:hover {
   transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2); /* Using primary color for hover shadow */
   border-color: var(--primary-color);
 }
 
 .contact-card .icon-wrapper {
   width: 70px;
   height: 70px;
-  background-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
-  transition: background-color var(--transition-speed) ease,
+  transition: background var(--transition-speed) ease, /* Transition background */
     transform var(--transition-speed) ease;
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4); /* Using primary color for shadow */
 }
 
 .contact-card:hover .icon-wrapper {
-  background-color: #0056b3;
+  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
   transform: rotateY(360deg);
 }
 
@@ -683,7 +645,7 @@ body {
 
 .contact-card a:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: var(--accent-color);
 }
 
 .contact-outro {
@@ -761,6 +723,31 @@ body {
   }
 }
 
+/* Custom Cursor Styles */
+.custom-cursor,
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none; /* Ensure cursor doesn't interfere with clicks */
+  transform: translate(-50%, -50%); /* Center the cursor on the mouse position */
+  z-index: 9999;
+  /* Removed opacity: 0; here, controlled by JS now */
+}
+
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+}
+
+.custom-cursor-follower {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary-color);
+  background-color: rgba(74, 144, 226, 0.2);
+}
 /* Responsive Design */
 @media (max-width: 992px) {
   .nav-links {
@@ -818,6 +805,10 @@ body {
   .contact-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+  /* Projects grid on smaller screens, aims for 2 columns */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted for 2 columns */
+  }
 }
 
 @media (max-width: 768px) {
@@ -840,6 +831,10 @@ body {
 
   .contact-card {
     padding: 30px 20px;
+  }
+  /* Projects grid for tablets, ensuring at least 2 columns */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -865,11 +860,40 @@ body {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
   }
 
   .filter-button {
     margin: 5px;
     padding: 8px 15px;
   }
+}
+.project-link {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); 
+  color: #fff; 
+  padding: 10px 20px; 
+  border-radius: 50px; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); 
+  border: none; 
+}
+
+.project-link:hover {
+  transform: translateY(-3px); 
+  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); 
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.4); 
+  color: #fff;
+}
+
+.project-link i {
+  font-size: 1rem; 
+  color: #fff; 
+  transition: transform var(--transition-speed) ease;
 }

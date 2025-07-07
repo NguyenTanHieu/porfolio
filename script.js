@@ -109,6 +109,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+   // --- Custom Cursor ---
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    const follower = document.createElement('div');
+    follower.classList.add('custom-cursor-follower');
+    document.body.appendChild(follower);
+
+    // Initially hide them using GSAP, then control visibility
+    gsap.set([cursor, follower], { opacity: 0 });
+
+    let mouseX = 0, mouseY = 0;
+
+    const animateCursor = () => {
+        gsap.to(cursor, {
+            x: mouseX,
+            y: mouseY,
+            duration: 0.1,
+            ease: "none"
+        });
+        gsap.to(follower, {
+            x: mouseX - 10,
+            y: mouseY - 10,
+            duration: 0.4,
+            ease: "power2.out"
+        });
+        requestAnimationFrame(animateCursor);
+    };
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // Ensure they become visible on first mouse movement
+        gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
+    });
+
+    // Start the animation loop
+    animateCursor();
+
+    document.addEventListener('mouseleave', () => {
+        gsap.to([cursor, follower], { opacity: 0, duration: 0.3 });
+    });
+
+    document.addEventListener('mouseenter', () => {
+        gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
+    });
+
+    // Thêm hiệu ứng cho con trỏ khi tương tác
+    const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .filter-button, .cta-button, .back-to-top-btn, .project-link, .skill-item, .contact-card, .hamburger');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(follower, { scale: 1.5, duration: 0.3, ease: "power2.out" }); // Phóng to follower
+        });
+        el.addEventListener('mouseleave', () => {
+            gsap.to(follower, { scale: 1, duration: 0.3, ease: "power2.out" }); // Trở lại kích thước ban đầu
+        });
+    });
+
+    document.addEventListener('mousedown', () => {
+        gsap.to(follower, { scale: 0.8, duration: 0.2, ease: "power2.out" }); // Nhỏ lại khi click
+    });
+
+    document.addEventListener('mouseup', () => {
+        gsap.to(follower, { scale: 1, duration: 0.2, ease: "power2.out" }); // Phóng lại khi nhả click
+    });
     // --- Các Animation GSAP kích hoạt bởi cuộn ---
 
     // Animation cho phần Hero
@@ -328,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://dulich8.layoutwebdemo.com/',
             tags: 'branding'
         },
-{
+        {
             id: 11,
             title: `Website kiến trúc`,
             description: `Website giới thiệu dịch vụ công ty kiến trúc.`,
@@ -350,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: `Website giới thiệu dịch vụ công ty và bán hàng.`,
             image: `image/demo/b2b.png`,
             link: 'https://mubaohiemasia.com/',
-            tags: 'e-commerce branding '
+            tags: 'e-commerce branding'
         },
         {
             id: 14,
@@ -408,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
                     <a href="${project.link}" target="_blank" class="project-link">
-                        <i data-tabler-icon="external-link"></i> Xem chi tiết
+                        <i class="fas fa-external-link"></i> Xem chi tiết
                     </a>
                 </div>
             </div>

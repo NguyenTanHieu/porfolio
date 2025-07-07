@@ -434,6 +434,46 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://tintuc2.layoutwebdemo.com/',
             tags: 'blog'
         },
+        {
+            id: 16,
+            title: `Website chợ thuốc sỉ`,
+            description: `Website bán sản phẩm thuốc đầy đủ chức năng mua hàng quản lý đơn hàng đăng nhập xem giá sản phẩm`,
+            image: `image/demo/chothuocsi.png`,
+            link: 'https://chothuocsi.layoutwebdemo.com/',
+            tags: 'e-commerce'
+        },
+        {
+            id: 17,
+            title: `Website shop đồ trẻ em`,
+            description: `Website bán sản phẩm đồ trẻ em đầy đủ chức năng mua hàng quản lý đơn hàng`,
+            image: `image/demo/shopdotreem.png`,
+            link: 'https://shopdotreem.layoutwebdemo.com/',
+            tags: 'e-commerce'
+        },
+         {
+            id: 18,
+            title: `Website bán yến sâm`,
+            description: `Website bán sản phẩm yến sâm đầy đủ chức năng mua hàng quản lý đơn hàng`,
+            image: `image/demo/yensam.png`,
+            link: 'https://yensam.layoutwebdemo.com/',
+            tags: 'e-commerce'
+        },
+         {
+            id: 19,
+            title: `Website kiến trúc`,
+            description: `Website chia sẽ thông tin kiến thức về dịch vụ thi công nội thất`,
+            image: `image/demo/kientrucxinh.png`,
+            link: 'http://kientrucxinh.layoutwebdemo.com/',
+            tags: 'blog'
+        },
+         {
+            id: 20,
+            title: `Website review món ăn`,
+            description: `Website chia sẽ thông tin kiến thức về các địa điểm ăn uống`,
+            image: `image/demo/reviewmonngon.png`,
+            link: 'https://reviewmonngon.com/',
+            tags: 'blog'
+        },
     ];
 
 

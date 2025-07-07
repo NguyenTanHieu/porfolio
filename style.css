@@ -1,15 +1,15 @@
 :root {
   --primary-color: #002957; /* A modern blue */
-  --secondary-color: #6C757D; /* Muted grey */
-  --text-color: #343A40; /* Darker text for contrast */
-  --secondary-text-color: #6C757D;
-  --background-color: #F4F7FA; /* Light background for professionalism */
-  --light-background: #FFFFFF;
-  --card-background: #FFFFFF;
-  --border-color: #E9ECEF; /* Soft border */
+  --secondary-color: #6c757d; /* Muted grey */
+  --text-color: #343a40; /* Darker text for contrast */
+  --secondary-text-color: #6c757d;
+  --background-color: #f4f7fa; /* Light background for professionalism */
+  --light-background: #ffffff;
+  --card-background: #ffffff;
+  --border-color: #e9ecef; /* Soft border */
   --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow */
   --transition-speed: 0.3s;
-  --accent-color: #285E8E; /* A darker shade of primary for accents */
+  --accent-color: #285e8e; /* A darker shade of primary for accents */
   --gradient-start: #002957; /* Gradient start color */
   --gradient-end: #016a78; /* Gradient end color */
   --project-hover-scale: 1.03; /* Slightly increase size on hover */
@@ -40,7 +40,11 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient background */
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -61,7 +65,11 @@ body {
 }
 
 .back-to-top-btn:hover {
-  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-end),
+    var(--gradient-start)
+  ); /* Reverse gradient on hover */
   color: #fff;
   transform: scale(1.1);
 }
@@ -126,7 +134,11 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); /* Gradient line */
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient line */
   border-radius: 2px;
 }
 
@@ -184,7 +196,11 @@ body {
   position: absolute;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); /* Gradient line */
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient line */
   bottom: -5px;
   left: 0;
   transition: width var(--transition-speed) ease;
@@ -272,7 +288,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient background */
   color: #fff;
   padding: 15px 30px;
   border-radius: 50px;
@@ -280,8 +300,8 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
   transition: transform var(--transition-speed) ease,
-    background var(--transition-speed) ease, /* Transition background */
-    box-shadow var(--transition-speed) ease;
+    background var(--transition-speed) ease,
+    /* Transition background */ box-shadow var(--transition-speed) ease;
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
   border: none;
   cursor: pointer;
@@ -291,7 +311,11 @@ body {
 
 .cta-button:hover {
   transform: translateY(-5px);
-  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-end),
+    var(--gradient-start)
+  ); /* Reverse gradient on hover */
   box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
 }
 .text-center {
@@ -395,7 +419,10 @@ body {
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Explicitly 3 columns for large screens */
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Explicitly 3 columns for large screens */
   gap: 30px;
   min-height: 400px;
 }
@@ -467,7 +494,7 @@ body {
 }
 
 .project-link:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* Project Filtering */
@@ -489,13 +516,21 @@ body {
 }
 
 .filter-button:hover {
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient on hover */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient on hover */
   color: #fff;
   border-color: transparent;
 }
 
 .filter-button.active {
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient for active */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient for active */
   color: #fff;
   border-color: transparent;
   box-shadow: 0 3px 8px rgba(74, 144, 226, 0.3); /* Using primary color for active shadow */
@@ -510,7 +545,11 @@ body {
   justify-content: center;
   border-radius: 99px;
   padding: 20px;
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient background */
   color: #fff;
   border: none; /* Ensure no border */
   cursor: pointer;
@@ -520,7 +559,11 @@ body {
   transition: all var(--transition-speed) ease;
 }
 #loadMoreProjects:hover {
-  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-end),
+    var(--gradient-start)
+  ); /* Reverse gradient on hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -603,19 +646,27 @@ body {
 .contact-card .icon-wrapper {
   width: 70px;
   height: 70px;
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  ); /* Gradient background */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
-  transition: background var(--transition-speed) ease, /* Transition background */
-    transform var(--transition-speed) ease;
+  transition: background var(--transition-speed) ease,
+    /* Transition background */ transform var(--transition-speed) ease;
   box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4); /* Using primary color for shadow */
 }
 
 .contact-card:hover .icon-wrapper {
-  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
+  background: linear-gradient(
+    45deg,
+    var(--gradient-end),
+    var(--gradient-start)
+  ); /* Reverse gradient on hover */
   transform: rotateY(360deg);
 }
 
@@ -730,10 +781,9 @@ body {
   top: 0;
   left: 0;
   border-radius: 50%;
-  pointer-events: none; /* Ensure cursor doesn't interfere with clicks */
-  transform: translate(-50%, -50%); /* Center the cursor on the mouse position */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
   z-index: 9999;
-  /* Removed opacity: 0; here, controlled by JS now */
 }
 
 .custom-cursor {
@@ -746,7 +796,7 @@ body {
   width: 30px;
   height: 30px;
   border: 1px solid var(--primary-color);
-  background-color: rgba(74, 144, 226, 0.2);
+  background-color: rgba(36, 99, 170, 0.697);
 }
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -765,9 +815,9 @@ body {
   .nav-links.active {
     display: flex;
   }
-.hero-description{
-  width: 100% !important;
-}
+  .hero-description {
+    width: 100% !important;
+  }
   .nav-links li {
     margin: 10px 0;
     text-align: center;
@@ -807,7 +857,10 @@ body {
   }
   /* Projects grid on smaller screens, aims for 2 columns */
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted for 2 columns */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Adjusted for 2 columns */
   }
 }
 
@@ -860,7 +913,7 @@ body {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .filter-button {
@@ -869,31 +922,39 @@ body {
   }
 }
 .project-link {
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; 
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); 
-  color: #fff; 
-  padding: 10px 20px; 
-  border-radius: 50px; 
+  gap: 8px;
+  background: linear-gradient(
+    45deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all var(--transition-speed) ease;
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); 
-  border: none; 
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  border: none;
 }
 
 .project-link:hover {
-  transform: translateY(-3px); 
-  background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); 
-  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.4); 
+  transform: translateY(-3px);
+  background: linear-gradient(
+    45deg,
+    var(--gradient-end),
+    var(--gradient-start)
+  );
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.4);
   color: #fff;
 }
 
 .project-link i {
-  font-size: 1rem; 
-  color: #fff; 
+  font-size: 1rem;
+  color: #fff;
   transition: transform var(--transition-speed) ease;
 }

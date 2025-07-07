@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "none"
         });
         gsap.to(follower, {
-            x: mouseX - 10,
-            y: mouseY - 10,
-            duration: 0.4,
+            x: mouseX,
+            y: mouseY,
+            duration: 0.8,
             ease: "power2.out"
         });
         requestAnimationFrame(animateCursor);
@@ -157,24 +157,23 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
     });
 
-    // Thêm hiệu ứng cho con trỏ khi tương tác
     const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .filter-button, .cta-button, .back-to-top-btn, .project-link, .skill-item, .contact-card, .hamburger');
 
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            gsap.to(follower, { scale: 1.5, duration: 0.3, ease: "power2.out" }); // Phóng to follower
+            gsap.to(follower, { scale: 1.5, duration: 0.3, ease: "power2.out" }); 
         });
         el.addEventListener('mouseleave', () => {
-            gsap.to(follower, { scale: 1, duration: 0.3, ease: "power2.out" }); // Trở lại kích thước ban đầu
+            gsap.to(follower, { scale: 1, duration: 0.3, ease: "power2.out" }); 
         });
     });
 
     document.addEventListener('mousedown', () => {
-        gsap.to(follower, { scale: 0.8, duration: 0.2, ease: "power2.out" }); // Nhỏ lại khi click
+        gsap.to(follower, { scale: 1.5, duration: 0.2, ease: "power2.out" }); 
     });
 
     document.addEventListener('mouseup', () => {
-        gsap.to(follower, { scale: 1, duration: 0.2, ease: "power2.out" }); // Phóng lại khi nhả click
+        gsap.to(follower, { scale: 1, duration: 0.2, ease: "power2.out" }); 
     });
     // --- Các Animation GSAP kích hoạt bởi cuộn ---
 

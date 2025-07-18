@@ -474,6 +474,22 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://reviewmonngon.com/',
             tags: 'blog'
         },
+        {
+            id: 21,
+            title: `Website dịch vụ SEO`,
+            description: `Website giới thiệu và cung cấp dịch vụ SEO`,
+            image: `image/demo/tangdiemdomain.png`,
+            link: 'https://tangdiemdomain.com/',
+            tags: 'e-commerce blog'
+        },
+        {
+            id: 22,
+            title: `Website thuê xe`,
+            description: `Website giới thiệu và cung cấp dịch vụ thuê xe`,
+            image: `image/demo/asialimousine.png`,
+            link: 'https://asialimousine.vn/',
+            tags: 'e-commerce blog'
+        },
     ];
 
 

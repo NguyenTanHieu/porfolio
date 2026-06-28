@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(hidePreloader, 4000);
     }
 
-    // --- Nút "Back to Top" ---
+
     const backToTopBtn = document.getElementById('backToTopBtn');
     if (backToTopBtn) { 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) { 
                 gsap.to(backToTopBtn, { opacity: 1, scale: 1, duration: 0.3, display: 'flex' });
-            } else { // Ẩn nút khi cuộn lên gần đầu trang
+            } else { 
                 gsap.to(backToTopBtn, { opacity: 0, scale: 0.8, duration: 0.3, onComplete: () => backToTopBtn.style.display = 'none' });
             }
         });

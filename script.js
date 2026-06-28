@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionTop = section.offsetTop;
             const headerOffset = header ? header.offsetHeight : 0;
             // Điều chỉnh offset để liên kết active sớm hơn một chút khi cuộn
-            if (scrollY >= sectionTop - headerOffset - 100) {
+            if (window.scrollY >= sectionTop - headerOffset - 100) {
                 currentSectionId = section.getAttribute('id');
             }
         });
@@ -111,6 +111,27 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navbar.classList.toggle('active');
+        });
+    }
+
+    // Xử lý sự kiện cho nút CTA "Xem Dự Án Của Tôi"
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetSection = document.getElementById('projects');
+            if (targetSection) {
+                const headerOffset = header ? header.offsetHeight : 0;
+                const offsetTop = targetSection.offsetTop - headerOffset;
+                gsap.to(window, {
+                    duration: 0.4,
+                    scrollTo: {
+                        y: offsetTop,
+                        autoKill: false
+                    },
+                    ease: 'power2.inOut'
+                });
+            }
         });
     }
 

@@ -26,199 +26,188 @@
                 <div class="dot"></div>
             </div>
         </div>
-        <button id="backToTopBtn" class="back-to-top-btn">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+
         <header class="header">
             <nav class="navbar">
                 <a href="#hero" class="logo">
-                    <img src="image/logo.png">
+                    <img src="image/logo.png" alt="Hiếu logo">
                 </a>
                 <ul class="nav-links">
-                    <li>
-                        <a href="#hero" data-section="hero">Trang Chủ</a>
-                    </li>
-                    <li>
-                        <a href="#about" data-section="about">Giới Thiệu</a>
-                    </li>
-                    <li>
-                        <a href="#skills" data-section="skills">Kỹ Năng</a>
-                    </li>
-                    <li>
-                        <a href="#projects" data-section="projects">Dự Án</a>
-                    </li>
-                    <li>
-                        <a href="#contact" data-section="contact">Liên Hệ</a>
-                    </li>
+                    <li><a href="#hero" class="active" data-i18n="nav_home">Trang Chủ</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Giới Thiệu</a></li>
+                    <li><a href="#skills" data-i18n="nav_skills">Kỹ Năng</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Dự Án</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Liên Hệ</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="language-switch">
+                    <select id="languageSelector" class="language-select" aria-label="Chọn ngôn ngữ">
+                        <option value="vi">VI</option>
+                        <option value="en">EN</option>
+                    </select>
                 </div>
+                <button class="hamburger" type="button" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </nav>
         </header>
+
         <main>
             <section id="hero" class="hero-section">
+                <div class="hero-background-parallax"></div>
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Xin chào, tôi là
+                        <span class="hero-greeting" data-i18n="hero_greeting">Xin chào, tôi là</span>
                         <span class="highlight">Hiếu</span>
                     </h1>
-                    <p class="hero-description">
-                        <span class="typewriter-text"></span>
-                    </p>
-                    <a href="#projects" class="cta-button">
-                        Xem Dự Án Của Tôi
-                        <i data-tabler-icon="arrow-narrow-right"></i>
-                    </a>
+                    <p class="typewriter-text" data-i18n="hero_typing_text">Một nhà thiết kế website chuyên nghiệp, biến ý tưởng thành trải nghiệm người dùng tuyệt vời.</p>
+                    <button class="cta-button" type="button" data-i18n="cta_button">Xem Dự Án Của Tôi</button>
                 </div>
-                <div class="hero-background-parallax"></div>
             </section>
+
             <section id="about" class="about-section section-padding">
                 <div class="container">
-                    <h2 class="section-title">Giới thiệu</h2>
+                    <h2 class="section-title" data-i18n="about_title">Giới thiệu</h2>
                     <div class="about-content">
                         <div class="about-image">
                             <img src="image/img.jpg" alt="Hiếu">
                         </div>
                         <div class="about-text">
-                            <p>Chào bạn! Tôi là một nhà thiết kế website với đam mê tạo nên giao diện trực quan, thẩm mỹ và thân thiện với người dùng. Với nhiều năm kinh nghiệm, tôi chuyên thiết kế, quản lý và tối ưu website để mang lại trải nghiệm tốt nhất cho người truy cập.</p>
-                            <p>Mục tiêu của tôi là tạo ra những trang web không chỉ hấp dẫn về mặt thị giác mà còn hiệu quả trong việc truyền tải thông điệp và đạt được mục tiêu kinh doanh của khách hàng. Tôi luôn học hỏi các công nghệ và xu hướng mới nhất để mang đến giải pháp tốt nhất.</p>
-                            <p>Hãy cùng kết nối để biến những ý tưởng của bạn thành hiện thực!</p>
+                            <p data-i18n="about_para1">Chào bạn! Tôi là một nhà thiết kế website với đam mê tạo nên giao diện trực quan, thẩm mỹ và thân thiện với người dùng. Với nhiều năm kinh nghiệm, tôi chuyên thiết kế, quản lý và tối ưu website để mang lại trải nghiệm tốt nhất cho người truy cập.</p>
+                            <p data-i18n="about_para2">Mục tiêu của tôi là tạo ra những trang web không chỉ hấp dẫn về mặt thị giác mà còn hiệu quả trong việc truyền tải thông điệp và đạt được mục tiêu kinh doanh của khách hàng. Tôi luôn học hỏi các công nghệ và xu hướng mới nhất để mang đến giải pháp tốt nhất.</p>
+                            <p data-i18n="about_para3">Hãy cùng kết nối để biến những ý tưởng của bạn thành hiện thực!</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section id="skills" class="skills-section section-padding bg-light">
                 <div class="container">
-                    <h2 class="section-title">Kỹ Năng Chính</h2>
+                    <h2 class="section-title" data-i18n="skills_title">Kỹ Năng Chính</h2>
                     <div class="skills-grid">
                         <div class="skill-item">
                             <i class="fab fa-wordpress"></i>
-                            <h3>WordPress Developer</h3>
-                            <p>Thiết kế và phát triển giao diện tùy chỉnh bằng cách kết hợp Theme Builder, ACF, Elementor,... Thành thạo xây dựng theme và plugin riêng, linh hoạt tích hợp nhiều plugin và theme để đáp ứng đa dạng yêu cầu dự án.</p>
+                            <h3 data-i18n="skill_wordpress">WordPress Developer</h3>
+                            <p data-i18n="skill_wordpress_desc">Thiết kế và phát triển giao diện tùy chỉnh bằng cách kết hợp Theme Builder, ACF, Elementor,... Thành thạo xây dựng theme và plugin riêng, linh hoạt tích hợp nhiều plugin và theme để đáp ứng đa dạng yêu cầu dự án.</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-palette"></i>
-                            <h3>UI/UX Design</h3>
-                            <p>Thiết kế trải nghiệm người dùng với Figma, Adobe XD, Canva</p>
+                            <h3 data-i18n="skill_uiux">UI/UX Design</h3>
+                            <p data-i18n="skill_uiux_desc">Thiết kế trải nghiệm người dùng với Figma, Adobe XD, Canva</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-code"></i>
-                            <h3>Front-end Development</h3>
-                            <p>HTML, CSS, JavaScript, ReactJS</p>
+                            <h3 data-i18n="skill_frontend">Front-end Development</h3>
+                            <p data-i18n="skill_frontend_desc">HTML, CSS, JavaScript, ReactJS</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-server"></i>
-                            <h3>Back-end Development</h3>
-                            <p>PHP, Laravel – Xây dựng chức năng và xử lý dữ liệu</p>
+                            <h3 data-i18n="skill_backend">Back-end Development</h3>
+                            <p data-i18n="skill_backend_desc">PHP, Laravel – Xây dựng chức năng và xử lý dữ liệu</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-database"></i>
-                            <h3>Database Management</h3>
-                            <p>MySQL, phpMyAdmin – Thiết kế và tối ưu hóa dữ liệu</p>
+                            <h3 data-i18n="skill_database">Database Management</h3>
+                            <p data-i18n="skill_database_desc">MySQL, phpMyAdmin – Thiết kế và tối ưu hóa dữ liệu</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-cloud-upload-alt"></i>
-                            <h3>Hosting & Triển khai</h3>
-                            <p>Cài đặt web server, SSL, DNS, kết nối tên miền, gửi mail hệ thống</p>
+                            <h3 data-i18n="skill_hosting">Hosting & Triển khai</h3>
+                            <p data-i18n="skill_hosting_desc">Cài đặt web server, SSL, DNS, kết nối tên miền, gửi mail hệ thống</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-chart-line"></i>
-                            <h3>SEO & Hiệu suất</h3>
-                            <p>Tối ưu chuẩn SEO onpage, tốc độ tải trang, Google Search Console</p>
+                            <h3 data-i18n="skill_seo_performance">SEO & Hiệu suất</h3>
+                            <p data-i18n="skill_seo_performance_desc">Tối ưu chuẩn SEO onpage, tốc độ tải trang, Google Search Console</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-pen-nib"></i>
-                            <h3>Content SEO</h3>
-                            <p>Nghiên cứu từ khóa, viết bài chuẩn SEO, tối ưu thẻ tiêu đề, mô tả và nội dung bài viết</p>
+                            <h3 data-i18n="skill_content_seo">Content SEO</h3>
+                            <p data-i18n="skill_content_seo_desc">Nghiên cứu từ khóa, viết bài chuẩn SEO, tối ưu thẻ tiêu đề, mô tả và nội dung bài viết</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-store"></i>
-                            <h3>Quản lý & vận hành sàn TMĐT</h3>
-                            <p>Xây dựng sàn TMĐT, đăng sản phẩm, tối ưu gian hàng, xử lý đơn hàng trên Shopee, Lazada, Tiki và website</p>
+                            <h3 data-i18n="skill_ecommerce_ops">Quản lý & vận hành sàn TMĐT</h3>
+                            <p data-i18n="skill_ecommerce_ops_desc">Xây dựng sàn TMĐT, đăng sản phẩm, tối ưu gian hàng, xử lý đơn hàng trên Shopee, Lazada, Tiki và website</p>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-github"></i>
-                            <h3>Git & Version Control</h3>
-                            <p>Quản lý dự án bằng Git, GitHub – Triển khai giao diện thông qua GitHub Pages</p>
+                            <h3 data-i18n="skill_git">Git & Version Control</h3>
+                            <p data-i18n="skill_git_desc">Quản lý dự án bằng Git, GitHub – Triển khai giao diện thông qua GitHub Pages</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-bullhorn"></i>
-                            <h3>Chạy quảng cáo Ads</h3>
-                            <p>Thiết lập và tối ưu chiến dịch quảng cáo trên Google Ads, Facebook Ads – Tăng chuyển đổi, giảm chi phí</p>
+                            <h3 data-i18n="skill_ads">Chạy quảng cáo Ads</h3>
+                            <p data-i18n="skill_ads_desc">Thiết lập và tối ưu chiến dịch quảng cáo trên Google Ads, Facebook Ads – Tăng chuyển đổi, giảm chi phí</p>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-chart-pie"></i>
-                            <h3>Phân tích dữ liệu</h3>
-                            <p>Sử dụng Google Analytics, Google Tag Manager để theo dõi hành vi người dùng và đo lường hiệu quả website</p>
+                            <h3 data-i18n="skill_data_analysis">Phân tích dữ liệu</h3>
+                            <p data-i18n="skill_data_analysis_desc">Sử dụng Google Analytics, Google Tag Manager để theo dõi hành vi người dùng và đo lường hiệu quả website</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section id="projects" class="projects-section section-padding">
                 <div class="container">
-                    <h2 class="section-title">Dự Án Tiêu Biểu</h2>
+                    <h2 class="section-title" data-i18n="projects_title">Dự Án Tiêu Biểu</h2>
                     <div class="filter-buttons">
-                        <button class="filter-button active" data-filter="all">Tất cả</button>
-                        <button class="filter-button" data-filter="e-commerce">E-commerce</button>
-                        <button class="filter-button" data-filter="branding">Branding</button>
-                        <button class="filter-button" data-filter="blog">Blog</button>
+                        <button class="filter-button active" data-filter="all" data-i18n="filter_all">Tất cả</button>
+                        <button class="filter-button" data-filter="e-commerce" data-i18n="filter_ecommerce">E-commerce</button>
+                        <button class="filter-button" data-filter="branding" data-i18n="filter_branding">Branding</button>
+                        <button class="filter-button" data-filter="blog" data-i18n="filter_blog">Blog</button>
                     </div>
                     <div class="projects-grid"></div>
                     <div class="text-center mt-5">
                         <button id="loadMoreProjects" class="load-more-btn">
-                            <span class="button-text">Xem Thêm Dự Án</span>
+                            <span class="button-text" data-i18n="load_more">Xem Thêm Dự Án</span>
                             <div class="loading-spinner"></div>
-                            <i data-tabler-icon="dots" class="button-icon"></i>
+                            <i class="fas fa-ellipsis-h button-icon"></i>
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="contact" class="contact-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Liên Hệ Với Tôi</h2>
-                <p class="contact-intro">Bạn có ý tưởng hay cần một nhà thiết kế website? Hãy kết nối với tôi qua các kênh sau:</p>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-envelope"></i>
+            </section>
+
+            <section id="contact" class="contact-section section-padding">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="contact_title">Liên Hệ Với Tôi</h2>
+                    <p class="contact-intro" data-i18n="contact_intro">Bạn có ý tưởng hay cần một nhà thiết kế website? Hãy kết nối với tôi qua các kênh sau:</p>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 data-i18n="contact_email">Email</h3>
+                            <p><a href="mailto:sendomailthv@gmail.com">sendomailthv@gmail.com</a></p>
                         </div>
-                        <h3>Email</h3>
-                        <p>
-                            <a href="mailto:sendomailthv@gmail.com">sendomailthv@gmail.com</a>
-                        </p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-phone"></i>
+                        <div class="contact-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3 data-i18n="contact_phone">Điện thoại</h3>
+                            <p><a href="tel:0898816686">+84 898 816 686</a></p>
                         </div>
-                        <h3>Điện thoại</h3>
-                        <p>
-                            <a href="tel:0898816686">+84 898 816 686</a>
-                        </p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="icon-wrapper">
-                            <i class="fab fa-github"></i>
+                        <div class="contact-card">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3 data-i18n="contact_github">GitHub</h3>
+                            <p><a href="https://github.com/nguyentanhieu" target="_blank" rel="noreferrer">github.com/nguyentanhieu</a></p>
                         </div>
-                        <h3>GitHub</h3>
-                        <p>
-                            <a href="https://github.com/nguyentanhieu" target="_blank">github.com/nguyentanhieu</a>
-                        </p>
                     </div>
+                    <p class="contact-outro" data-i18n="contact_outro">Tôi luôn sẵn sàng thảo luận về các dự án mới và cơ hội hợp tác.</p>
                 </div>
-                <p class="contact-outro">Tôi luôn sẵn lòng thảo luận về các dự án mới và cơ hội hợp tác.</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p data-i18n="footer_text">&copy; 2024 Hiếu. All rights reserved.</p>
             </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Hiếu. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
 </html>

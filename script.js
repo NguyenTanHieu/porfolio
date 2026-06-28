@@ -825,3 +825,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects(filteredProjectsData.slice(0, projectsPerPage), true);
 
 });
+

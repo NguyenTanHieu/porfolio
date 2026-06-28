@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Đăng ký các plugin GSAP cần thiết
     gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
-
-    // --- Chức năng Preloader ---
     const preloader = document.getElementById('preloader');
     const hidePreloader = () => {
         if (!preloader || preloader.style.display === 'none') return;
@@ -14,17 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (preloader) {
-        // Đảm bảo preloader biến mất sau khi toàn bộ trang tải xong
         window.addEventListener('load', hidePreloader);
-        // Fallback nếu load event không xảy ra hoặc bị treo
         setTimeout(hidePreloader, 4000);
     }
 
     // --- Nút "Back to Top" ---
     const backToTopBtn = document.getElementById('backToTopBtn');
-    if (backToTopBtn) { // Kiểm tra xem nút có tồn tại không
+    if (backToTopBtn) { 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { // Hiển thị nút khi cuộn xuống hơn 300px
+            if (window.scrollY > 300) { 
                 gsap.to(backToTopBtn, { opacity: 1, scale: 1, duration: 0.3, display: 'flex' });
             } else { // Ẩn nút khi cuộn lên gần đầu trang
                 gsap.to(backToTopBtn, { opacity: 0, scale: 0.8, duration: 0.3, onComplete: () => backToTopBtn.style.display = 'none' });
@@ -33,19 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         backToTopBtn.addEventListener('click', () => {
             gsap.to(window, {
-                duration: 0.4, // Thời gian cuộn
-                scrollTo: { y: 0, autoKill: false }, // Cuộn lên đầu trang
-                ease: "power2.inOut" // Kiểu chuyển động
+                duration: 0.4, 
+                scrollTo: { y: 0, autoKill: false }, 
+                ease: "power2.inOut" 
             });
         });
     }
 
-    // --- Header, Điều hướng & Menu Hamburger ---
+
     const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
     const hamburger = document.querySelector('.hamburger');
-    const navbar = document.querySelector('.nav-links'); // Container của các liên kết điều hướng
+    const navbar = document.querySelector('.nav-links');
 
     window.addEventListener('scroll', () => {
         // Header dính (sticky header)
@@ -57,12 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Đánh dấu liên kết điều hướng đang hoạt động
         let currentSectionId = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const headerOffset = header ? header.offsetHeight : 0;
-            // Điều chỉnh offset để liên kết active sớm hơn một chút khi cuộn
             if (window.scrollY >= sectionTop - headerOffset - 100) {
                 currentSectionId = section.getAttribute('id');
             }
@@ -70,21 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            // Kiểm tra cả 'data-section' và 'href' để đảm bảo tính linh hoạt
             if (link.getAttribute('data-section') === currentSectionId || link.getAttribute('href').substring(1) === currentSectionId) {
                 link.classList.add('active');
             }
         });
     });
 
-    // Xử lý sự kiện click vào các liên kết điều hướng (cuộn mượt)
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ 'a'
+            e.preventDefault(); 
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
 
-            if (targetSection) { // Đảm bảo phần tử mục tiêu tồn tại
+            if (targetSection) { 
                 const headerOffset = header ? header.offsetHeight : 0;
                 const offsetTop = targetSection.offsetTop - headerOffset;
 
@@ -92,13 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 0.4,
                     scrollTo: {
                         y: offsetTop,
-                        autoKill: false // Không tự động dừng cuộn khi có tương tác khác
+                        autoKill: false 
                     },
                     ease: "power2.inOut"
                 });
             }
 
-            // Đóng menu di động nếu đang mở sau khi nhấp vào liên kết
             if (hamburger && navbar && hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navbar.classList.remove('active');
@@ -106,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Chức năng bật/tắt Menu Hamburger
     if (hamburger && navbar) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -114,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Xử lý sự kiện cho nút CTA "Xem Dự Án Của Tôi"
     const ctaButton = document.querySelector('.cta-button');
     if (ctaButton) {
         ctaButton.addEventListener('click', (e) => {
@@ -135,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   // --- Custom Cursor ---
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
@@ -144,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     follower.classList.add('custom-cursor-follower');
     document.body.appendChild(follower);
 
-    // Initially hide them using GSAP, then control visibility
     gsap.set([cursor, follower], { opacity: 0 });
 
     let mouseX = 0, mouseY = 0;
@@ -168,11 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        // Ensure they become visible on first mouse movement
         gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
     });
 
-    // Start the animation loop
     animateCursor();
 
     document.addEventListener('mouseleave', () => {
@@ -202,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(follower, { scale: 1, duration: 0.2, ease: "power2.out" }); 
     });
 
-    // --- Hỗ trợ ngôn ngữ ---
     const translations = {
         vi: {
             nav_home: 'Trang Chủ',
@@ -369,9 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadUserLang();
 
-    // --- Các Animation GSAP kích hoạt bởi cuộn ---
 
-    // Animation cho phần Hero
     gsap.from(".hero-title", {
         opacity: 0,
         y: 50,
@@ -383,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text: translations[document.documentElement.lang || 'vi'].hero_typing_text,
         duration: 2.5,
         delay: 1.2,
-        ease: "none" // Hiệu ứng gõ chữ
+        ease: "none" 
     });
     gsap.from(".cta-button", {
         opacity: 0,
@@ -393,17 +374,17 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 3
     });
     gsap.to(".hero-background-parallax", {
-        yPercent: 30, // Di chuyển 30% theo trục Y khi cuộn
+        yPercent: 30,
         ease: "none",
         scrollTrigger: {
             trigger: ".hero-section",
             start: "top top",
             end: "bottom top",
-            scrub: true // Cuộn mượt mà theo vị trí cuộn
+            scrub: true
         }
     });
 
-    // Animation cho tiêu đề các phần chung
+
     gsap.utils.toArray(".section-title").forEach(title => {
         gsap.from(title, {
             opacity: 0,
@@ -413,13 +394,13 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power3.out",
             scrollTrigger: {
                 trigger: title,
-                start: "top 80%", // Kích hoạt khi tiêu đề vào 80% màn hình từ trên xuống
-                toggleActions: "play none none reverse" // Phát khi vào, đảo ngược khi ra
+                start: "top 80%",
+                toggleActions: "play none none reverse" 
             }
         });
     });
 
-    // Animation cho phần About
+
     gsap.from(".about-image img", {
         opacity: 0,
         x: -100,
@@ -437,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
         x: 100,
         duration: 1.2,
         ease: "power3.out",
-        stagger: 0.2, // Hiệu ứng xuất hiện lần lượt
+        stagger: 0.2, 
         scrollTrigger: {
             trigger: ".about-section",
             start: "top 70%",
@@ -445,14 +426,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Animation cho phần Skills
+
     gsap.utils.toArray(".skill-item").forEach(item => {
         gsap.from(item, {
             opacity: 0,
             y: 50,
             scale: 0.8,
             duration: 0.8,
-            ease: "back.out(1.7)", // Hiệu ứng nảy nhẹ
+            ease: "back.out(1.7)",
             scrollTrigger: {
                 trigger: item,
                 start: "top 85%",
@@ -461,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animation cho phần Contact
+
     gsap.from(".contact-intro", {
         opacity: 0,
         y: 30,
@@ -499,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Lọc và Tải thêm Dự án (Portfolio) ---
+
     const filterButtons = document.querySelectorAll('.filter-button');
     const projectsContainer = document.querySelector('.projects-grid');
     const loadMoreButton = document.getElementById('loadMoreProjects');
@@ -685,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    // Hàm render các dự án
+
     const renderProjects = (projectsToRender, isInitialLoad = false) => {
         if (!projectsContainer) return;
 
@@ -708,7 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Hàm thêm và animate các dự án
+
     const appendProjects = (projects) => {
         if (!projectsContainer) return;
 
@@ -765,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLoadMoreButton();
     };
 
-    // Cập nhật nút Load More
+ 
     const updateLoadMoreButton = () => {
         if (!loadMoreButton) return;
 
@@ -786,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Load thêm dự án
+
     const loadMoreProjects = () => {
         if (!loadMoreButton || loadMoreButton.classList.contains('loading')) return;
 
@@ -799,7 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     };
 
-    // Xử lý filter dự án
+ 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -815,12 +796,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sự kiện Load More
+
     if (loadMoreButton) {
         loadMoreButton.addEventListener('click', loadMoreProjects);
     }
 
-    // Khởi tạo ban đầu
+
     filteredProjectsData = [...allProjectsData];
     renderProjects(filteredProjectsData.slice(0, projectsPerPage), true);
 

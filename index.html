@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hiếu - Website Developer Portfolio</title>
+        <title data-i18n="page_title">Hiếu - Website Developer Portfolio</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
         <link
@@ -41,8 +41,8 @@
                 </ul>
                 <div class="language-switch">
                     <select id="languageSelector" class="language-select" aria-label="Chọn ngôn ngữ">
-                        <option value="vi">VI</option>
-                        <option value="en">EN</option>
+                        <option value="vi">🇻🇳 VI</option>
+                        <option value="en">🇺🇸 EN</option>
                     </select>
                 </div>
                 <button class="hamburger" type="button" aria-label="Toggle menu">
@@ -59,7 +59,7 @@
                 <div class="hero-content">
                     <h1 class="hero-title">
                         <span class="hero-greeting" data-i18n="hero_greeting">Xin chào, tôi là</span>
-                        <span class="highlight">Hiếu</span>
+                        <span class="highlight" data-i18n="hero_name">Hiếu</span>
                     </h1>
                     <p class="typewriter-text" data-i18n="hero_typing_text">Một nhà thiết kế website chuyên nghiệp, biến ý tưởng thành trải nghiệm người dùng tuyệt vời.</p>
                     <button class="cta-button" type="button" data-i18n="cta_button">Xem Dự Án Của Tôi</button>
@@ -207,6 +207,10 @@
                 <p data-i18n="footer_text">&copy; 2024 Hiếu. All rights reserved.</p>
             </div>
         </footer>
+
+        <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
 
         <script src="script.js"></script>
     </body>

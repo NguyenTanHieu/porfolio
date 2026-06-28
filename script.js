@@ -234,7 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_github: 'GitHub',
             contact_outro: 'Tôi luôn sẵn sàng thảo luận về các dự án mới và cơ hội hợp tác.',
             project_view_details: 'Xem chi tiết',
-            footer_text: '&copy; 2024 Hiếu. All rights reserved.'
+            hero_name: 'Hiếu',
+            footer_text: '&copy; 2024 Hiếu. All rights reserved.',
+            page_title: 'Hiếu - Website Developer Portfolio'
         },
         en: {
             nav_home: 'Home',
@@ -286,7 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_phone: 'Phone',
             contact_github: 'GitHub',
             contact_outro: 'I am always happy to discuss new projects and collaboration opportunities.',
-            footer_text: '&copy; 2024 Hiếu. All rights reserved.',
+            hero_name: 'Hieu',
+            footer_text: '&copy; 2024 Hieu. All rights reserved.',
+            page_title: 'Hieu - Website Developer Portfolio',
             project_view_details: 'View Details'
         }
     };

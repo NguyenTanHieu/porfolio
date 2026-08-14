@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about_para3: 'Let us connect to turn your ideas into reality!',
             skills_title: 'Key Skills',
             skill_wordpress: 'WordPress Developer',
-            skill_wordpress_desc: 'Design and develop custom interfaces using Theme Builder, ACF, Elementor. Experienced building custom themes and plugins, integrating plugins/themes for diverse project needs.',
+            skill_wordpress_desc: 'Design and develop custom interfaces using Theme Builder, ACF, and Elementor. Proficient in building custom themes and plugins, and highly adaptable in integrating various tools to meet diverse project requirements.',
             skill_uiux: 'UI/UX Design',
             skill_uiux_desc: 'Design user experiences with Figma, Adobe XD, Canva',
             skill_frontend: 'Front-end Development',
